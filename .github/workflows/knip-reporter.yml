@@ -21,7 +21,7 @@ jobs:
 
       - name: Install toolchain
         run: yarn install
-
+      
       - uses: actions/download-artifact@v4
         with:
           name: knip-results
@@ -36,7 +36,7 @@ jobs:
           trim: true
 
       - name: Report knip results to pull request
-        uses: gitcoindev/knip-reporter@main
+        uses: ubiquity/knip-reporter@main
         with:
           verbose: true
           comment_id: ${{ github.workflow }}-reporter
@@ -47,3 +47,5 @@ jobs:
           json_input_file_name: knip-results.json
           pull_request_number: ${{ steps.pr-number.outputs.content }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+

@@ -10,3 +10,7 @@ node_modules
 static/dist
 metamask
 static/out
+coverage
+junit.xml
+cypress/screenshots
+
